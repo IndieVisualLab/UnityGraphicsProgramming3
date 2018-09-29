@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NBodyCS: {fileID: 7200000, guid: e05fa8468a94e99489f9936f548ba967, type: 3}
-  numParticles: 16384
+  numParticles: 65536
   seed: 0
   divideLevel: 4
   positionScale: 16

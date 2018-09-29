@@ -1,27 +1,33 @@
 ﻿using UnityEngine;
 
-public class ParticleRenderer : MonoBehaviour {
+namespace Kodai
+{
 
-    [SerializeField] GameObject simObject;
-    
-    [SerializeField] Material particleRenderMat;
-
-    IParticleRenderable simScript;
-
-    private void Start()
-    {
-        simScript = simObject.GetComponent<IParticleRenderable>();
-        
-    }
-
-    private void OnRenderObject()
+    public class ParticleRenderer : MonoBehaviour
     {
 
-        particleRenderMat.SetPass(0);
-        particleRenderMat.SetBuffer("_Particles", simScript.GetParticleBuffer());
+        [SerializeField] GameObject simObject;
 
-        Graphics.DrawProcedural(MeshTopology.Points, simScript.GetParticleNum());
+        [SerializeField] Material particleRenderMat;
+
+        IParticleRenderable simScript;
+
+        private void Start()
+        {
+            simScript = simObject.GetComponent<IParticleRenderable>();
+
+        }
+
+        private void OnRenderObject()
+        {
+
+            particleRenderMat.SetPass(0);
+            particleRenderMat.SetBuffer("_Particles", simScript.GetParticleBuffer());
+
+            Graphics.DrawProcedural(MeshTopology.Points, simScript.GetParticleNum());
 
 
+        }
     }
+
 }
