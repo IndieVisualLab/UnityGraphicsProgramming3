@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 276089317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -20}
+  m_LocalPosition: {x: 0, y: 1, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -243,15 +243,16 @@ MonoBehaviour:
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
   size: 1.45
-  grow: 0.25
+  grow: 0.5
   pattern: 0
-  divideInterval: 0.25
+  iterations: 2
+  divideInterval: 0.1
   maxDivideCount: 64
   maxLink: 3
-  drag: 0.985
-  limit: 1
-  repulsion: 2.2
-  spring: 5
+  drag: 0.925
+  limit: 2
+  repulsion: 2.45
+  spring: 4.5
 --- !u!4 &1191934948
 Transform:
   m_ObjectHideFlags: 0
