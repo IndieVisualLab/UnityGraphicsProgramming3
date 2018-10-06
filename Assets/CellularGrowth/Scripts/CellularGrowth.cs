@@ -27,6 +27,7 @@ namespace CellularGrowth
         [SerializeField, Range(0.01f, 1f)] protected float grow = 0.25f;
 
         [SerializeField] protected DividePattern pattern = DividePattern.Branch;
+        [SerializeField, Range(1, 4)] protected int iterations = 2;
         [SerializeField, Range(0.02f, 3f)] protected float divideInterval = 0.5f;
         [SerializeField, Range(1, 128)] protected int maxDivideCount = 16;
         [SerializeField, Range(2, 6)] protected int maxLink = 4;
@@ -92,10 +93,12 @@ namespace CellularGrowth
             compute.SetFloat("_Time", time);
             compute.SetFloat("_DT", dt);
 
-            UpdateEdgesKernel();
-            SpringEdgesKernel();
-
-            UpdateParticlesKernel();
+            for(int i = 0; i < iterations; i++)
+            {
+                UpdateEdgesKernel();
+                SpringEdgesKernel();
+                UpdateParticlesKernel();
+            }
 
             Render();
         }
